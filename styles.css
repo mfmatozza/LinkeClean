@@ -1,0 +1,4 @@
+/* LinkedIn Feed Cleaner - hide things CSS can catch */
+[data-lfc-hidden] {
+  display: none !important;
+}

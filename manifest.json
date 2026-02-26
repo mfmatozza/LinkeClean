@@ -1,0 +1,26 @@
+{
+  "manifest_version": 3,
+  "name": "LinkeClean by Michele Matozza",
+  "version": "1.0",
+  "description": "Remove noise from LinkedIn: ads, job anniversaries, celebrations, suggested posts, and more.",
+  "permissions": ["storage"],
+  "content_scripts": [
+    {
+      "matches": ["https://www.linkedin.com/*"],
+      "js": ["content.js"],
+      "css": ["styles.css"],
+      "run_at": "document_idle"
+    }
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "48": "icon48.png",
+      "128": "icon128.png"
+    }
+  },
+  "icons": {
+    "48": "icon48.png",
+    "128": "icon128.png"
+  }
+}

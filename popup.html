@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      width: 272px;
+      font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: #f4f2ee;
+      color: #191919;
+      padding: 16px;
+    }
+
+    .header {
+      display: flex;
+      align-items: center;
+      gap: 9px;
+      margin-bottom: 3px;
+    }
+
+    .header svg {
+      width: 20px;
+      height: 20px;
+      flex-shrink: 0;
+    }
+
+    h1 {
+      font-size: 14px;
+      font-weight: 600;
+      color: #191919;
+    }
+
+    .subtitle {
+      font-size: 11px;
+      color: #666;
+      margin-bottom: 14px;
+    }
+
+    .section-title {
+      font-size: 10px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.6px;
+      color: #999;
+      padding: 12px 0 5px 1px;
+    }
+
+    .card {
+      background: #fff;
+      border-radius: 8px;
+      border: 1px solid #e8e5df;
+      overflow: hidden;
+    }
+
+    .filter-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 9px 12px;
+      cursor: pointer;
+      transition: background 0.1s;
+      border-bottom: 1px solid #f0ede8;
+    }
+
+    .filter-row:last-child { border-bottom: none; }
+    .filter-row:hover { background: #faf9f7; }
+
+    .filter-label {
+      font-size: 12px;
+      font-weight: 500;
+      color: #333;
+      user-select: none;
+    }
+
+    .toggle {
+      position: relative;
+      width: 32px;
+      height: 17px;
+      flex-shrink: 0;
+    }
+
+    .toggle input { display: none; }
+
+    .toggle .slider {
+      position: absolute;
+      inset: 0;
+      background: #cbc8c1;
+      border-radius: 17px;
+      transition: background 0.2s;
+      cursor: pointer;
+    }
+
+    .toggle .slider::before {
+      content: "";
+      position: absolute;
+      width: 13px;
+      height: 13px;
+      left: 2px;
+      top: 2px;
+      background: #fff;
+      border-radius: 50%;
+      transition: transform 0.18s ease;
+      box-shadow: 0 0.5px 2px rgba(0,0,0,0.12);
+    }
+
+    .toggle input:checked + .slider { background: #0a66c2; }
+    .toggle input:checked + .slider::before { transform: translateX(15px); }
+
+    .footer {
+      text-align: center;
+      font-size: 9.5px;
+      color: #b0aca5;
+      margin-top: 14px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="header">
+    <svg viewBox="0 0 24 24" fill="none" stroke="#0a66c2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <line x1="4" y1="21" x2="4" y2="14"/><line x1="4" y1="10" x2="4" y2="3"/>
+      <line x1="12" y1="21" x2="12" y2="12"/><line x1="12" y1="8" x2="12" y2="3"/>
+      <line x1="20" y1="21" x2="20" y2="16"/><line x1="20" y1="12" x2="20" y2="3"/>
+      <line x1="1" y1="14" x2="7" y2="14"/>
+      <line x1="9" y1="8" x2="15" y2="8"/>
+      <line x1="17" y1="16" x2="23" y2="16"/>
+    </svg>
+    <h1>Feed Cleaner</h1>
+  </div>
+  <p class="subtitle">Filter noise from your LinkedIn feed.</p>
+
+  <div id="filters"></div>
+
+  <div class="footer">Changes apply on next scroll</div>
+
+  <script src="popup.js"></script>
+</body>
+</html>
