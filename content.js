@@ -58,6 +58,8 @@
     /happy to share/i,
     /excited to announce/i,
     /i'm happy to announce/i,
+    /i'm delighted to announce/i,
+    /i'm delighted to share/i,
     /promoted to/i,
     /congrats/i,
     /congratulations/i,
@@ -130,6 +132,8 @@
     if (!header) return false;
     const text = header.textContent.toLowerCase();
     return (
+      /piace\s+a\s+Matteo\s+Giardina/i.test(text) ||
+      /Matteo\s+Giardina\s+likes\s+this/i.test(text) ||
       /likes?\s+this/i.test(text) ||
       /commented\s+on\s+this/i.test(text) ||
       /reacted\s+to\s+this/i.test(text) ||
@@ -159,6 +163,7 @@
       post.querySelector('[class*="follow-recommendation"]') !== null ||
       /people you may know/i.test(text) ||
       /try linkedin premium/i.test(text) ||
+      /people also liked/i.test(text) ||
       /people also viewed/i.test(text) ||
       /add to your feed/i.test(text) ||
       /persone che potresti conoscere/i.test(text) ||
